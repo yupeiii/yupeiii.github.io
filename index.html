@@ -1,246 +1,194 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <!-- Meta, title, CSS, favicons, etc. -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HTML5 sensores view</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
 
-  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABALhBgPC4AoAAAAAAAAAAAQDIQrDAlkFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABINjBQVD6ahEw6cawAAAAAAAAAAEw6hehINlZgLCFcRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMOjAsXEK2XFxCx/hUPoW4AAAAAAAAAABQPpoAUD6b+Eg2UiwgGQQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZEbFvGRK4+RkRtv8WD6RuAAAAAAAAAAAVD6mAFQ+r/xQPqPQRDY9jAAAAAAAAAAAAAAAAAAAAAAAAAAAaEbA3GxO+4xsTvf8aErr/GBCobgAAAAAAAAAAFhCugBYQr/8WEK//FQ+n2RALfy8AAAAAAAAAAD09Pf89PT3/PT09/x0UxP8cE8H/GxO+/xkRrG4AAAAAAAAAABgRsoAYEbT/GBCz/xcQsv89PT3/PT09/z09Pf89PT3/PT09/z09Pf8fFMn/HRTG/x0Uw/8aEq9zAAAAAQAAAAEZEbOEGhK5/xkRuP8ZEbf/PT09/z09Pf89PT3/AAAAAAAAAAAgFcyRIBXN/x8Vyv8eFMf/GxK1ex0UwMgbE7m4GhK2iBsTvv8bE73/GhK8/xgRr38AAAAAAAAAAAAAAP8AAAD/AAAA/yIW0f8hFc7zIBXKsgAAAAAeFMbFHRO+swAAAAAcE8K8HBPC9xsTwP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8jFtTqIRXMXRUNhAcYD5MaIBXJzB4UwLwPCVsVFQ+SCx0UxGwdFMXvAAAA/wAAAP8AAAD/AAAAAAAAAAAlGNiPIhbLqhwSpz8gFMKCIRXLxyIW0PghFc31HxTCwxwSsn0YEJlAHhPDuBwSuX0AAAAAAAAAAAAAAAAAAAABJxjcnyYY2/clGNjwJRja/yQX2f8jF9f/IxbV/yIW0/8hFdH+IBXM7iAVzfkeE7+OAAAAAAAAAAAAAAAAIhXDBigZ4LQoGeL/KBng/ycY3v8mGNz/JRjb/yQY2f8kF9j/IxfX/yIX1f8iFtT/IBXIowAAAAMAAAAAAAAAAB4TqAEoGeJzKBnj9igZ4/8oGeL/KBnh/ycZ3/8mGN3/Jhjc/yUY2/8kF9n/JBfX8SIWzmEAAAAAAAAAAAAAAAAAAAAAJxneBygZ4mwoGePiKBnj/ygZ4/8oGeL/KBni/ycZ4P8nGN/+Jhjc2iQX1l0fE7kEAAAAAAAAAAAAAAAAAAAAAAAAAAAnGNwCKBnhNSgZ4o0oGeLNKBnj6CgZ4+coGeLIJxnghSYY2iwdEqsBAAAAAAAAAAAAAAAA//8AAPvfAADzjwAA848AAOOHAAADgAAAA4AAAMIHAAACQAAADnAAAMg3AADAAwAAwAMAAOAHAADwDwAA+B8AAA==" rel="icon" type="image/x-icon" />
+  <title>HTML5 Sensor Showcase - ShereCar</title>
 
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
 
-  <link href='https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
-<body>
 
-<nav class="navbar navbar-fixed-top">
-  <div class="container">
+<body>
+  <!-- Static navbar -->
+  <nav class="navbar">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-        <span class="sr-only">Toggle navigation</span>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Hőm.Chart</a>
+      <span class="navbar-brand">HTML5 Sensing Demonstration</span>
     </div>
-    <div id="navbar" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav " style="padding-left: 50px;">
-        <li class="active"><a href="#daily">Napi lebontás</a></li>
-        <li class="active"><a href="#hourly">Órás lebontás</a></li>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><p class="navbar-text"><small><i>Supported browsers: Chrome, Firefox, Opera</i></small><p></li>
       </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="wrapper-body">
-  <div class="container about">
-      <div class="col-xs-12">
-        <h1>Hőm.Chart</h1>
+    </div><!--/.nav-collapse -->
+  </nav>
+  <div class="container">
+    <div class="row">
+      <h3>Camera and Microphone</h3>
+      <span id="spanMedia">
+      <div id="divCamera" class="col-md-6">
+        <h4>Camera</h4>
+        <video autoplay></video>
       </div>
-  </div>
-
-  <div class="container chart">
-    <div class="row">
-        <div class="col-xs-12 chart-wrapper">
-          <h2 id="daily">Napi lebontás</h2>
-
-          <div id="chart_div" class=""> <img src="img/loading.gif" alt="loadinggif" /> </div>
-        </div>
+      <div id="divMicrophone" class="col-md-6">
+        <h4>Microphone</h4>
+      </div>
+      </span>
+      <!--- /.spanMedia used in case camera/audio unavailable --->
     </div>
-  </div>
-
-  <div class="container chart">
     <div class="row">
-        <div class="col-xs-12 chart-wrapper">
-          <h2 id="hourly">Órás lebontás</h2>
-          <p>
-            <label for="json_select">Nap kiválasztása: </label>
-            <select id="json_select" data-toggle="tooltip" title="Válasszon dátumot amit meg akar jeleníteni">
-              <option value="20150927.json">2015.09.27</option>
-              <option value="20150928.json">2015.09.28</option>
-              <option value="20150929.json">2015.09.29</option>
-              <option value="20150930.json">2015.09.30</option>
-            </select>
-          </p>
-          <div id="chartAll_div" class=""> <img src="img/loading.gif" alt="loadinggif" /> </div>
-        </div>
+      <h3>Physical properties of the device <small><i>For mobile phones</i></small></h3>
+      <div id="divLocation" class="col-md-4">
+        <h4>Location</h4>
+        <span id="spanLat">Getting latitude</span> : 
+        <span id="spanLon">Getting longitude</span>
+      </div>
+      <div id="divOrientation" class="col-md-4">
+        <h4>Orientation</h4>
+        <ul>
+          <li>Tilt Left/Right: <span id="spanTiltGamma">#</span>
+          <li>Tilt Front/Back: <span id="spanTiltBeta">#</span>
+          <li>Direction: <span id="spanTiltDir">#</span>
+        </ul>
+      </div>
+      <div id="divMotion" class="col-md-4">
+        <h4>Motion</h4>
+        <ul>
+          <li>Acceleration: <span id="spanMotionAccel">#</span>
+          <li>Acceleration with Gravity: <span id="spanMotionGrav">#</span>
+          <li>Rotation Rate: <span id="spanMotionRot">#</span>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
+    <div class="row">
+      <h3>Examples of Form Media Capture <small><i>For mobile phones</i></small></h3>
+      <div class="col-md-4">
+        Camera:
+        <input type="file" accept="image/*" capture="camera">
+      </div>
+      <div class="col-md-4">
+        Video:
+        <input type="file" accept="video/*" capture="camcorder">
+      </div>
+      <div class="col-md-4">
+        Audio:
+        <input type="file" accept="audio/*" capture="microphone">
+      </div>
+    </div>
+  </div> <!-- /container -->
 
-
-<script>
-  $(document).ready(function(){
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script>
+    /** 
+     * This is a showcase page demonstrating the various information a webpage
+     *  can glean from the device accessing it.
+     * 
+     * Need check for feature support and permission for each feature.
+     * It would be easier to use something like Modernizr for vendor checking,
+     *  but this is a demo, so checking functions are visible.
+     *
+     * Drawn from:
+     * http://www.html5rocks.com/en/tutorials/getusermedia/intro/
+     * https://simpl.info/getusermedia/sources/
+     */
+    var video = document.querySelector('video');
+    window.AudioContext = window.AudioContext ||
+                          window.webkitAudioContext;
+    var context = new AudioContext();
     
-
-
-    function convertTimestamp(timestamp) {
-      var d = new Date(timestamp * 1000);      
-      return d;
-    }
-
-    /*Google API rész*/
-
-    function drawBasic(json_file) {
-
-      var file = json_file;
-      
-      $.ajax({
-          url: "data/"+json_file,
-          dataType: "JSON"
-        }).done(function(json) 
-        {
-          var resultS = "[";
-          simpleA = [];
-
-          var data = new google.visualization.DataTable();
-          
-          data.addColumn('datetime', 'Dátum');
-          data.addColumn('number', 'Minimum');
-          data.addColumn('number', 'Maximum');
-          data.addColumn('number', 'Átlag');
-          
-
-          for (var key in json) {
-              if (json.hasOwnProperty(key)) {
-                  var item = json[key];
-                  betaA = [convertTimestamp(item.time),parseFloat(item.min), parseFloat(item.max), parseFloat(item.avg)];
-                  simpleA.push(betaA);
-              }
-          };
-
-          resultS = resultS.substring(0, resultS.length - 1);
-          resultS += ']';
-
-          data.addRows(simpleA);
+    // check for media support (camera and microphone)
+    navigator.getUserMedia  = navigator.getUserMedia ||
+                              navigator.webkitGetUserMedia ||
+                              navigator.mozGetUserMedia ||
+                              navigator.msGetUserMedia;
+    if (navigator.getUserMedia) {
+      navigator.getUserMedia({audio: true, video: true}, function(stream) {
+        video.src = window.URL.createObjectURL(stream);
         
-          var options = {
-            title: 'Szobahőmérő mérései',
-            hAxis: {
-              title: 'Dátum'
-            },
-            vAxis: {
-              title: 'Celsius',
-              format: '##,####'
-            },
-            colors: ['#028FAD', '#A60303', '#148F00']  ,
-            crosshair: {
-              color: '#000',
-              trigger: 'both'
-            }  
-         };
-          
-         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-
-          chart.draw(data, options);
-        });     
-      }
-
-      function alldata(json_file) {
-
-        var file = json_file;
-
-        console.log(file);
-
-        $.ajax({
-            url: "data/"+file,
-            dataType: "JSON"
-          }).done(function(json) 
-          {
-            var resultS = "[";
-            simpleA = [];
-
-            var data = new google.visualization.DataTable();
-            
-            data.addColumn('datetime', 'Dátum');
-            data.addColumn('number', 'Érték');
-            
-
-            for (var key in json) {
-                if (json.hasOwnProperty(key)) {
-                    var item = json[key];
-                    betaA = [convertTimestamp(item.time), parseFloat(item.value)];
-                    simpleA.push(betaA);
-                }
-            };
-
-            resultS = resultS.substring(0, resultS.length - 1);
-            resultS += ']';
-
-            data.addRows(simpleA);
-          
-            var options = {
-              title: 'Szobahőmérő mérései',
-              hAxis: {
-                title: 'Dátum'
-              },
-              vAxis: {
-                title: 'Celsius',
-                format: '##,####'
-              },
-              colors: ['#F58400']  ,
-              crosshair: {
-                color: '#000',
-                trigger: 'both'
-              }  
-           };
-            
-           var chart = new google.visualization.LineChart(document.getElementById('chartAll_div'));
-
-            chart.draw(data, options);
-          });     
-        }
-
-      google.load('visualization', '1', {packages: ['corechart', 'line'],'callback': drawBasic});
-      google.load('visualization', '1', {packages: ['corechart', 'line'],'callback': alldata});
-
-      google.setOnLoadCallback(function() {
-          drawBasic("mp_result_ms_daily.json");
+        var microphone = context.createMediaStreamSource(stream);
+        console.log(microphone);
+        var filter = context.createBiquadFilter();
+        microphone.connect(filter);
+        filter.connect(context.destination);
+      }, errorCallback);
+    } else {
+      message = 'User Media is not supported for this Browser/OS version';
+      document.getElementById('spanMedia').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
+    
+    function errorCallback(error){
+      console.log (error)
+      message = 'Error with navigator.getUserMedia';
+      document.getElementById('spanMedia').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
+    
+    // check for Geolocation support
+    if (navigator.geolocation) {
+      // Single use function that gets the current position
+      navigator.geolocation.getCurrentPosition(function(position) {
+        startPos = position;
+        document.getElementById("spanLat").innerHTML = startPos.coords.latitude;
+        document.getElementById("spanLon").innerHTML = startPos.coords.longitude;
       });
-
-      file = $("#json_select").val();
-      google.setOnLoadCallback(function() {
-            alldata(file);
-      });
-
-
-      /*mérési adatok*/
-      $("#json_select").change(function(){        
-        $("#chartAll_div").html("<img src=\"img/loading.gif\" alt=\"loadinggif\" />");
-        file = $("#json_select").val();
-            alldata(file);
-      });
-
       
-
-      
-      $(window).resize(function(){
-        drawBasic("mp_result_ms_daily.json");
-        file = $("#json_select").val();
-        alldata(file);
+      // Adds a persistent callback functionat constantly upates position
+      navigator.geolocation.watchPosition(function(position) {
+        document.getElementById("spanLat").innerHTML = position.coords.latitude;
+        document.getElementById("spaLon").innerHTML = position.coords.longitude;
       });
-
-      $('a').click(function(){
-          $('html, body').animate({
-              scrollTop: $( $(this).attr('href') ).offset().top - 75
-          }, 500);
-          return false;
-      });
-  });
-
-
-
-</script>
+    }
+    else {
+      message = 'Geolocation is not supported for this Browser/OS version';
+      document.getElementById('divLocation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
+    
+    // check for Device orientation support
+    if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(eventData) {
+        // left -> right tilt
+        document.getElementById("spanTiltGamma").innerHTML = eventData.gamma;
+        
+        // back -> front tilt
+        document.getElementById("spanTiltBeta").innerHTML = eventData.beta;
+        
+        // compass direction
+        document.getElementById("spanTiltDir").innerHTML = eventData.alpha;
+      }, false);
+    }
+    else {
+      message = 'Device Orientation is not supported for this Browser/OS version';
+      document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
+    
+        
+    // check for Device motion support
+    if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', function(eventData) {
+        // left -> right tilt
+        document.getElementById("spanMotionAccel").innerHTML = eventData.acceleration;
+        
+        // back -> front tilt
+        document.getElementById("spanMotionGrav").innerHTML = eventData.accelerationIncludingGravity;
+        
+        // compass direction
+        document.getElementById("spanMotionRot").innerHTML = eventData.rotationRate;
+      }, false);
+    }
+    else {
+      message = 'Device Motion is not supported for this Browser/OS version';
+      document.getElementById('divMotion').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
+  </script>
 
 </body>
 </html>
