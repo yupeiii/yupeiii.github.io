@@ -16,12 +16,7 @@
   <!-- Static navbar -->
   <nav class="navbar">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">HTML5 Sensing Demonstration</span>
+  
     </div>
    
   </nav>
@@ -76,47 +71,6 @@
         
 
   </script>
-  
-  <section>
-		Your device oriention is: 
-		<p>
-			gamma (left-to-right): <span class="l2r"></span>
-		</p>
-		<p>
-			beta (front-to-back): <span class="f2b"></span>
-		</p>	
-		<p>
-			alpha (direation): <span class="dir"></span>
-		</p>
-	</section>	
-	<script type="text/javascript">
-		var $ = function(selector) {
-			return document.querySelector(selector);
-		}
-
-		// http://www.w3.org/2005/10/Process-20051014/tr.html#RecsWD
-
-		// Check to make sure the browser supprots DeviceOrientationEvents
-		if (window.DeviceOrientationEvent) {
-		  // Create an event listener
-		  window.addEventListener('deviceorientation', function(event) {
-		      // Get the left-to-right tilt (in degrees).
-		    var tiltLR = event.gamma;
-
-		    // Get the front-to-back tilt (in degrees).
-		    var titleFB = event.beta;
-
-		      // Get the direction of the device (in degrees).
-		    var direction = event.alpha;
-
-
-		   	$('.l2r').innerText = tiltLR;
-		   	$('.f2b').innerText = titleFB;
-		   	$('.dir').innerText = direction;
-
-		  });
-		}
-	</script>
 
 </body>
 </html>
