@@ -1,142 +1,246 @@
-<DOCTYPE !HTML>
-
+<!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HTML5 sensores view</title>
 
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABALhBgPC4AoAAAAAAAAAAAQDIQrDAlkFgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABINjBQVD6ahEw6cawAAAAAAAAAAEw6hehINlZgLCFcRAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMOjAsXEK2XFxCx/hUPoW4AAAAAAAAAABQPpoAUD6b+Eg2UiwgGQQkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZEbFvGRK4+RkRtv8WD6RuAAAAAAAAAAAVD6mAFQ+r/xQPqPQRDY9jAAAAAAAAAAAAAAAAAAAAAAAAAAAaEbA3GxO+4xsTvf8aErr/GBCobgAAAAAAAAAAFhCugBYQr/8WEK//FQ+n2RALfy8AAAAAAAAAAD09Pf89PT3/PT09/x0UxP8cE8H/GxO+/xkRrG4AAAAAAAAAABgRsoAYEbT/GBCz/xcQsv89PT3/PT09/z09Pf89PT3/PT09/z09Pf8fFMn/HRTG/x0Uw/8aEq9zAAAAAQAAAAEZEbOEGhK5/xkRuP8ZEbf/PT09/z09Pf89PT3/AAAAAAAAAAAgFcyRIBXN/x8Vyv8eFMf/GxK1ex0UwMgbE7m4GhK2iBsTvv8bE73/GhK8/xgRr38AAAAAAAAAAAAAAP8AAAD/AAAA/yIW0f8hFc7zIBXKsgAAAAAeFMbFHRO+swAAAAAcE8K8HBPC9xsTwP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8jFtTqIRXMXRUNhAcYD5MaIBXJzB4UwLwPCVsVFQ+SCx0UxGwdFMXvAAAA/wAAAP8AAAD/AAAAAAAAAAAlGNiPIhbLqhwSpz8gFMKCIRXLxyIW0PghFc31HxTCwxwSsn0YEJlAHhPDuBwSuX0AAAAAAAAAAAAAAAAAAAABJxjcnyYY2/clGNjwJRja/yQX2f8jF9f/IxbV/yIW0/8hFdH+IBXM7iAVzfkeE7+OAAAAAAAAAAAAAAAAIhXDBigZ4LQoGeL/KBng/ycY3v8mGNz/JRjb/yQY2f8kF9j/IxfX/yIX1f8iFtT/IBXIowAAAAMAAAAAAAAAAB4TqAEoGeJzKBnj9igZ4/8oGeL/KBnh/ycZ3/8mGN3/Jhjc/yUY2/8kF9n/JBfX8SIWzmEAAAAAAAAAAAAAAAAAAAAAJxneBygZ4mwoGePiKBnj/ygZ4/8oGeL/KBni/ycZ4P8nGN/+Jhjc2iQX1l0fE7kEAAAAAAAAAAAAAAAAAAAAAAAAAAAnGNwCKBnhNSgZ4o0oGeLNKBnj6CgZ4+coGeLIJxnghSYY2iwdEqsBAAAAAAAAAAAAAAAA//8AAPvfAADzjwAA848AAOOHAAADgAAAA4AAAMIHAAACQAAADnAAAMg3AADAAwAAwAMAAOAHAADwDwAA+B8AAA==" rel="icon" type="image/x-icon" />
 
-<title>Test IO</title>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
 
+  <link href='https://fonts.googleapis.com/css?family=Cantarell:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 </head>
-
 <body>
 
-<table>
-	<tr>
-		<td>
-		Test Data
-		</td>
+<nav class="navbar navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Hőm.Chart</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav " style="padding-left: 50px;">
+        <li class="active"><a href="#daily">Napi lebontás</a></li>
+        <li class="active"><a href="#hourly">Órás lebontás</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-		<td id="Odata">
-		</td>
-	</tr>
+<div class="wrapper-body">
+  <div class="container about">
+      <div class="col-xs-12">
+        <h1>Hőm.Chart</h1>
+      </div>
+  </div>
 
-	<tr>
-		<td>
-		Data for Orientation X
-		</td>
+  <div class="container chart">
+    <div class="row">
+        <div class="col-xs-12 chart-wrapper">
+          <h2 id="daily">Napi lebontás</h2>
 
-		<td id="OX">
-		</td>
-	</tr>
+          <div id="chart_div" class=""> <img src="img/loading.gif" alt="loadinggif" /> </div>
+        </div>
+    </div>
+  </div>
 
-	<tr>
-		<td>
-		Data for Orientation Y
-		</td>
+  <div class="container chart">
+    <div class="row">
+        <div class="col-xs-12 chart-wrapper">
+          <h2 id="hourly">Órás lebontás</h2>
+          <p>
+            <label for="json_select">Nap kiválasztása: </label>
+            <select id="json_select" data-toggle="tooltip" title="Válasszon dátumot amit meg akar jeleníteni">
+              <option value="20150927.json">2015.09.27</option>
+              <option value="20150928.json">2015.09.28</option>
+              <option value="20150929.json">2015.09.29</option>
+              <option value="20150930.json">2015.09.30</option>
+            </select>
+          </p>
+          <div id="chartAll_div" class=""> <img src="img/loading.gif" alt="loadinggif" /> </div>
+        </div>
+    </div>
+  </div>
+</div>
 
-		<td id="OY">
-		</td>
-	</tr>
 
-	<tr>
-		<td>
-		Data for Orientation Z
-		</td>
-
-		<td id="OZ">
-		</td>
-	</tr>
+<script>
+  $(document).ready(function(){
+    
 
 
-	<tr>
-		<td>
-		Test Data
-		</td>
+    function convertTimestamp(timestamp) {
+      var d = new Date(timestamp * 1000);      
+      return d;
+    }
 
-		<td id="Mdata">
-		</td>
-	</tr>
+    /*Google API rész*/
 
-	<tr>
-		<td>
-		Data for Motion X
-		</td>
+    function drawBasic(json_file) {
 
-		<td id="MX">
-		</td>
-	</tr>
+      var file = json_file;
+      
+      $.ajax({
+          url: "data/"+json_file,
+          dataType: "JSON"
+        }).done(function(json) 
+        {
+          var resultS = "[";
+          simpleA = [];
 
-	<tr>
-		<td>
-		Data for Motion Y
-		</td>
+          var data = new google.visualization.DataTable();
+          
+          data.addColumn('datetime', 'Dátum');
+          data.addColumn('number', 'Minimum');
+          data.addColumn('number', 'Maximum');
+          data.addColumn('number', 'Átlag');
+          
 
-		<td id="MY">
-		</td>
-	</tr>
+          for (var key in json) {
+              if (json.hasOwnProperty(key)) {
+                  var item = json[key];
+                  betaA = [convertTimestamp(item.time),parseFloat(item.min), parseFloat(item.max), parseFloat(item.avg)];
+                  simpleA.push(betaA);
+              }
+          };
 
-	<tr>
-		<td>
-		Data for Motion Z
-		</td>
+          resultS = resultS.substring(0, resultS.length - 1);
+          resultS += ']';
 
-		<td id="MZ">
-		</td>
-	</tr>
+          data.addRows(simpleA);
+        
+          var options = {
+            title: 'Szobahőmérő mérései',
+            hAxis: {
+              title: 'Dátum'
+            },
+            vAxis: {
+              title: 'Celsius',
+              format: '##,####'
+            },
+            colors: ['#028FAD', '#A60303', '#148F00']  ,
+            crosshair: {
+              color: '#000',
+              trigger: 'both'
+            }  
+         };
+          
+         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
 
-	<tr>
-		<td>
-		Test Data
-		</td>
+          chart.draw(data, options);
+        });     
+      }
 
-		<td id="MGdata">
-		</td>
-	</tr>
+      function alldata(json_file) {
 
-	<tr>
-		<td>
-		Data for Motion G X
-		</td>
+        var file = json_file;
 
-		<td id="MGX">
-		</td>
-	</tr>
+        console.log(file);
 
-	<tr>
-		<td>
-		Data for Motion G Y
-		</td>
+        $.ajax({
+            url: "data/"+file,
+            dataType: "JSON"
+          }).done(function(json) 
+          {
+            var resultS = "[";
+            simpleA = [];
 
-		<td id="MGY">
-		</td>
-	</tr>
+            var data = new google.visualization.DataTable();
+            
+            data.addColumn('datetime', 'Dátum');
+            data.addColumn('number', 'Érték');
+            
 
-	<tr>
-		<td>
-		Data for Motion G Z
-		</td>
+            for (var key in json) {
+                if (json.hasOwnProperty(key)) {
+                    var item = json[key];
+                    betaA = [convertTimestamp(item.time), parseFloat(item.value)];
+                    simpleA.push(betaA);
+                }
+            };
 
-		<td id="MGZ">
-		</td>
-	</tr>
-</table>
-<script src="socket.io/socket.io.js"></script>
-<script src='js/events.js'></script>
-<script>	
-	window.addEventListener("load",function(event){
-		alert("Entering");
-		orient();
-	},false);
-	window.addEventListener("beforeunload",function(event){
-		showCount();
-	},false);
-	
-	/*window.attachEvent("onbeforeunload", function(event){
-		alert("Ending");
-		alert(count);
-	});*/
-	
-	//window.beforeunload = showCount;
+            resultS = resultS.substring(0, resultS.length - 1);
+            resultS += ']';
+
+            data.addRows(simpleA);
+          
+            var options = {
+              title: 'Szobahőmérő mérései',
+              hAxis: {
+                title: 'Dátum'
+              },
+              vAxis: {
+                title: 'Celsius',
+                format: '##,####'
+              },
+              colors: ['#F58400']  ,
+              crosshair: {
+                color: '#000',
+                trigger: 'both'
+              }  
+           };
+            
+           var chart = new google.visualization.LineChart(document.getElementById('chartAll_div'));
+
+            chart.draw(data, options);
+          });     
+        }
+
+      google.load('visualization', '1', {packages: ['corechart', 'line'],'callback': drawBasic});
+      google.load('visualization', '1', {packages: ['corechart', 'line'],'callback': alldata});
+
+      google.setOnLoadCallback(function() {
+          drawBasic("mp_result_ms_daily.json");
+      });
+
+      file = $("#json_select").val();
+      google.setOnLoadCallback(function() {
+            alldata(file);
+      });
+
+
+      /*mérési adatok*/
+      $("#json_select").change(function(){        
+        $("#chartAll_div").html("<img src=\"img/loading.gif\" alt=\"loadinggif\" />");
+        file = $("#json_select").val();
+            alldata(file);
+      });
+
+      
+
+      
+      $(window).resize(function(){
+        drawBasic("mp_result_ms_daily.json");
+        file = $("#json_select").val();
+        alldata(file);
+      });
+
+      $('a').click(function(){
+          $('html, body').animate({
+              scrollTop: $( $(this).attr('href') ).offset().top - 75
+          }, 500);
+          return false;
+      });
+  });
+
+
+
 </script>
 
 </body>
+</html>
