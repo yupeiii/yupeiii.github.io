@@ -69,16 +69,16 @@
       document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
     }
 	
-	//if (window.DeviceMotionEvent) {
+	if (window.DeviceMotionEvent) {
       window.addEventListener('devicemotion', function(eventData) {
         // left -> right tilt
-        document.getElementById("rotationRate").innerHTML = eventData.rotationRate;
+        document.getElementById("rotationRate").innerHTML = eventData.rotationRate.beta;
       }, false);
-   // }
-  //  else {
-//      message = 'Device Motion is not supported for this Browser/OS version';
-//      document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
- //   }
+    }
+    else {
+      message = 'Device Motion is not supported for this Browser/OS version';
+      document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
     
         
 
