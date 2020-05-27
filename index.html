@@ -72,7 +72,7 @@
 	if (window.DeviceMotionEvent) {
       window.addEventListener('devicemotion', function(eventData) {
         // left -> right tilt
-        document.getElementById("rotationRate").innerHTML = deviceMotionEvent.rotationRate;
+        document.getElementById("rotationRate").innerHTML = eventData.rotationRate;
       }, false);
     }
     else {
