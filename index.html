@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<!-- saved from url=(0036)https://yupeiii.github.io/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <!-- Meta, title, CSS, favicons, etc. -->
-  <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
 
-  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" rel="stylesheet">
-  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+  <link href="./index_files/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="./index_files/bootstrap-glyphicons.css" rel="stylesheet">
 
 </head>
 
@@ -25,17 +25,18 @@
       <div id="divOrientation" class="col-md-4">
         <h4>Orientation</h4>
         <ul>
-          <li>Tilt Left/Right: <span id="spanTiltGamma">#</span>
-          <li>Tilt Front/Back: <span id="spanTiltBeta">#</span>
-          <li>Direction: <span id="spanTiltDir">#</span>
-        </ul>
+          <li>Tilt Left/Right: <span id="spanTiltGamma"></span>
+          </li><li>Tilt Front/Back: <span id="spanTiltBeta"></span>
+          </li><li>Direction: <span id="spanTiltDir"></span>
+          </li><li>rotationRate: <span id="rotationRate"></span>
+        </li></ul>
       </div>
      
     </div>
    
 
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="./index_files/jquery.js.下載"></script>
+  <script src="./index_files/bootstrap.min.js.下載"></script>
   <script>
     /** 
      * This is a showcase page demonstrating the various information a webpage
@@ -67,10 +68,22 @@
       message = 'Device Orientation is not supported for this Browser/OS version';
       document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
     }
+	
+	if (window.DeviceMotionEvent) {
+      window.addEventListener('devicemotion', function(eventData) {
+        // left -> right tilt
+        document.getElementById("rotationRate").innerHTML = deviceMotionEvent.rotationRate;
+      }, false);
+    }
+    else {
+      message = 'Device Motion is not supported for this Browser/OS version';
+      document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
     
         
 
   </script>
 
-</body>
-</html>
+
+
+</body></html>
