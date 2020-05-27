@@ -28,7 +28,9 @@
           <li>Tilt Left/Right: <span id="spanTiltGamma"></span>
           </li><li>Tilt Front/Back: <span id="spanTiltBeta"></span>
           </li><li>Direction: <span id="spanTiltDir"></span>
-          </li><li>rotationRate: <span id="rotationRate"></span>
+          </li><li>rotationRateGamma: <span id="rotationRateGamma"></span>
+          </li><li>rotationRateBeta: <span id="rotationRateBeta"></span>
+          </li><li>rotationRateAlpha: <span id="rotationRateAlpha"></span>
         </li></ul>
       </div>
      
@@ -72,7 +74,9 @@
 	if (window.DeviceMotionEvent) {
       window.addEventListener('devicemotion', function(event) {
         // left -> right tilt
-        document.getElementById("rotationRate").innerHTML = event.rotationRate;
+        document.getElementById("rotationRateGamma").innerHTML = event.rotationRate.gamma;
+        document.getElementById("rotationRateBeta").innerHTML = event.rotationRate.beta;
+        document.getElementById("rotationRateAlpha").innerHTML = event.rotationRate.alpha;
       }, true);
     }
     else {
