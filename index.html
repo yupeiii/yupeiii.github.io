@@ -70,10 +70,10 @@
     }
 	
 	if (window.DeviceMotionEvent) {
-      window.addEventListener('devicemotion', function(eventData) {
+      window.addEventListener('devicemotion', function(event) {
         // left -> right tilt
-        document.getElementById("rotationRate").innerHTML = eventData.rotationRate.beta;
-      }, false);
+        document.getElementById("rotationRate").innerHTML = event.rotationRate;
+      }, true);
     }
     else {
       message = 'Device Motion is not supported for this Browser/OS version';
