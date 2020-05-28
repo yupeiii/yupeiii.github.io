@@ -67,6 +67,8 @@
         oriAlpha = eventData.alpha;
         document.getElementById("spanTiltDir").innerHTML = oriAlpha;
       }, false);
+	if(oriBeta > 60){
+            window.scrollBy(0, 100);}
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
@@ -89,8 +91,8 @@
       document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
     }
     
-    if(oriBeta >60){
-	    window.scrollBy(0, 100);}
+    if(oriBeta > 60){
+        window.scrollBy(0, 100);}
 
   </script>
 
