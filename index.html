@@ -66,9 +66,10 @@
         // compass direction
         oriAlpha = eventData.alpha;
         document.getElementById("spanTiltDir").innerHTML = oriAlpha;
-      }, false);
+
         if(oriBeta > 60){
             window.scrollBy(0, 100);}
+      }, false);
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
