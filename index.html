@@ -35,7 +35,7 @@
       </div>
      
     </div>
-   
+   <p id="demo">---Demo---</p>
 
   <script src="./index_files/jquery.js.下載"></script>
   <script src="./index_files/bootstrap.min.js.下載"></script>
@@ -70,17 +70,23 @@
       }, false);
 	    	
 	if(oriGamma > 10){
-	    document.write("oriRight");}
+	    document.write("oriRight");
+	    document.getElementById("demo").innerHTML = "oriRight";}
 	else if(oriGamma < -10){
-	    document.write("oriLeft");}
+	    document.write("oriLeft");
+	    document.getElementById("demo").innerHTML = "oriLeft";}
 	else {
-	    document.write("ori No Right/Left");}
+	    document.write("ori No Right/Left");
+	    document.getElementById("demo").innerHTML = "ori No Right/Left";}
 	if(oriBeta > 10){
-	    document.write("oriBack");}
+	    document.write("oriBack");
+	    document.getElementById("demo").innerHTML = "oriBack";}
 	else if(oriBeta < -10){
-	    document.write("oriFront");}
+	    document.write("oriFront");
+	    document.getElementById("demo").innerHTML = "oriFront";}
 	else {
-	    document.write("ori No Back/Front");}
+	    document.write("ori No Back/Front");
+	    document.getElementById("demo").innerHTML = "ori No Back/Front";}
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
