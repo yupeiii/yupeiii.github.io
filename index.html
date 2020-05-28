@@ -49,24 +49,30 @@
      * http://www.html5rocks.com/en/tutorials/getusermedia/intro/
      * https://simpl.info/getusermedia/sources/
      */
-    
+    var g,b,a;
     // check for Device orientation support
     if (window.DeviceOrientationEvent) {
       window.addEventListener('deviceorientation', function(eventData) {
         // left -> right tilt
         document.getElementById("spanTiltGamma").innerHTML = eventData.gamma;
-        
+        g = eventData.gamma;
         // back -> front tilt
         document.getElementById("spanTiltBeta").innerHTML = eventData.beta;
-        
+        b = eventData.beta;
         // compass direction
         document.getElementById("spanTiltDir").innerHTML = eventData.alpha;
+        a = eventData.alpha;
       }, false);
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
       document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
     }
+    
+    
+    if(b > 50) window.scrollBy(0,50);
+    
+
     
         
 
