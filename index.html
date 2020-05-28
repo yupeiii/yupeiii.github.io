@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
  
 <head>
   <!-- Meta, title, CSS, favicons, etc. -->
-  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
 
@@ -22,7 +21,51 @@
    
   </nav>
 
-  
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script>
+    /** 
+     * This is a showcase page demonstrating the various information a webpage
+     *  can glean from the device accessing it.
+     * 
+     * Need check for feature support and permission for each feature.
+     * It would be easier to use something like Modernizr for vendor checking,
+     *  but this is a demo, so checking functions are visible.
+     *
+     * Drawn from:
+     * http://www.html5rocks.com/en/tutorials/getusermedia/intro/
+     * https://simpl.info/getusermedia/sources/
+     */
+if (window.DeviceOrientationEvent) {
+      window.addEventListener('deviceorientation', function(eventData) {
+        // left -> right tilt
+        oriGamma = eventData.gamma;
+        document.getElementById("spanTiltGamma").innerHTML = oriGamma;
+        
+        // back -> front tilt
+        oriBeta = eventData.beta;
+        document.getElementById("spanTiltBeta").innerHTML = oriBeta;
+        
+        // compass direction
+        oriAlpha = eventData.alpha;
+        document.getElementById("spanTiltDir").innerHTML = oriAlpha;
+
+        if(oriBeta > 60){
+            window.scrollBy(0, 50);}
+	else if(oriBeta < 10){
+            window.scrollBy(0, -50);}
+      }, false);
+    }
+    else {
+      message = 'Device Orientation is not supported for this Browser/OS version';
+      document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
+    }
+    
+
+    
+        
+
+  </script>
   
   <div id="spText"></div>
    <div id="spText2"></div>
@@ -96,51 +139,7 @@
   勤有功　戲無益　戒之哉　宜勉力
   </pre>
 
-  <script src="http://code.jquery.com/jquery.js"></script>
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-  <script>
-    /** 
-     * This is a showcase page demonstrating the various information a webpage
-     *  can glean from the device accessing it.
-     * 
-     * Need check for feature support and permission for each feature.
-     * It would be easier to use something like Modernizr for vendor checking,
-     *  but this is a demo, so checking functions are visible.
-     *
-     * Drawn from:
-     * http://www.html5rocks.com/en/tutorials/getusermedia/intro/
-     * https://simpl.info/getusermedia/sources/
-     */
-if (window.DeviceOrientationEvent) {
-      window.addEventListener('deviceorientation', function(eventData) {
-        // left -> right tilt
-        oriGamma = eventData.gamma;
-        document.getElementById("spanTiltGamma").innerHTML = oriGamma;
-        
-        // back -> front tilt
-        oriBeta = eventData.beta;
-        document.getElementById("spanTiltBeta").innerHTML = oriBeta;
-        
-        // compass direction
-        oriAlpha = eventData.alpha;
-        document.getElementById("spanTiltDir").innerHTML = oriAlpha;
-
-        if(oriBeta > 60){
-            window.scrollBy(0, 50);}
-	else if(oriBeta < 10){
-            window.scrollBy(0, -50);}
-      }, false);
-    }
-    else {
-      message = 'Device Orientation is not supported for this Browser/OS version';
-      document.getElementById('divOrientation').innerHTML = '<div class="alert alert-warning">'+message+'</div>';
-    }
-    
-
-    
-        
-
-  </script>
+  
 
 </body>
 </html>
