@@ -36,6 +36,7 @@
      
     </div>
    
+   <p id="demo">我的第一个段落。</p>
 
   <script src="./index_files/jquery.js.下載"></script>
   <script src="./index_files/bootstrap.min.js.下載"></script>
@@ -82,17 +83,23 @@
         document.getElementById("rotationRateAlpha").innerHTML = alpha;
       }, true);
 	if(gamma > 10){
-	    document.write("Right");}
+	    document.write("Right");
+	    document.getElementById("demo").innerHTML="Right";}
 	else if(gamma < -10){
-	    document.write("Left");}
+	    document.write("Left");
+	    document.getElementById("demo").innerHTML="Left";}
 	else {
-	    document.write("No Right/Left");}
+	    document.write("No Right/Left");
+	    document.getElementById("demo").innerHTML="No Right/Left";}
 	if(beta > 10){
-	    document.write("Back");}
+	    document.write("Back");
+	    document.getElementById("demo").innerHTML="Back";}
 	else if(beta < -10){
-	    document.write("Front");}
+	    document.write("Front");
+	    document.getElementById("demo").innerHTML="Front";}
 	else {
-	    document.write("No Back/Front");}
+	    document.write("No Back/Front");
+	    document.getElementById("demo").innerHTML="No Back/Front";}
     }
     else {
       message = 'Device Motion is not supported for this Browser/OS version';
