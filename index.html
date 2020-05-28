@@ -74,9 +74,12 @@
 	if (window.DeviceMotionEvent) {
       window.addEventListener('devicemotion', function(event) {
         // left -> right tilt
-        document.getElementById("rotationRateGamma").innerHTML = event.rotationRate.gamma;
-        document.getElementById("rotationRateBeta").innerHTML = event.rotationRate.beta;
-        document.getElementById("rotationRateAlpha").innerHTML = event.rotationRate.alpha;
+        gamma = event.rotationRate.gamma;
+        beta = event.rotationRate.beta;
+        alpha = event.rotationRate.alpha;
+        document.getElementById("rotationRateGamma").innerHTML = gamma;
+        document.getElementById("rotationRateBeta").innerHTML = beta;
+        document.getElementById("rotationRateAlpha").innerHTML = alpha;
       }, true);
     }
     else {
