@@ -57,14 +57,30 @@
     if (window.DeviceOrientationEvent) {
       window.addEventListener('deviceorientation', function(eventData) {
         // left -> right tilt
-        document.getElementById("spanTiltGamma").innerHTML = eventData.gamma;
+	oriGamma = eventData.gamma;
+        document.getElementById("spanTiltGamma").innerHTML = oriGamma;
         
         // back -> front tilt
-        document.getElementById("spanTiltBeta").innerHTML = eventData.beta;
+	oriBeta = eventData.beta;
+        document.getElementById("spanTiltBeta").innerHTML = oriBeta;
         
         // compass direction
-        document.getElementById("spanTiltDir").innerHTML = eventData.alpha;
+	oriAlpha = eventData.alpha;
+        document.getElementById("spanTiltDir").innerHTML = oriAlpha;
       }, false);
+	    	
+	if(oriGamma > 10){
+	    document.write("oriRight");}
+	else if(oriGamma < -10){
+	    document.write("oriLeft");}
+	else {
+	    document.write("ori No Right/Left");}
+	if(oriBeta > 10){
+	    document.write("oriBack");}
+	else if(oriBeta < -10){
+	    document.write("oriFront");}
+	else {
+	    document.write("ori No Back/Front");}
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
