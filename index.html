@@ -31,8 +31,6 @@
           </li><li>rotationRateGamma: <span id="rotationRateGamma"></span>
           </li><li>rotationRateBeta: <span id="rotationRateBeta"></span>
           </li><li>rotationRateAlpha: <span id="rotationRateAlpha"></span>
-          </li><li>demoGamma: <span id="demoGamma"></span>
-          </li><li>demoBeta: <span id="demoBeta"></span>
         </li></ul>
       </div>
      
@@ -69,26 +67,6 @@
         oriAlpha = eventData.alpha;
         document.getElementById("spanTiltDir").innerHTML = oriAlpha;
       }, false);
-
-        if(oriGamma > 10){
-            document.write("oriRight");
-            document.getElementById("demoGamma").innerHTML = "oriRight";}
-        else if(oriGamma < -10){
-            document.write("oriLeft");
-            document.getElementById("demoGamma").innerHTML = "oriLeft";}
-        else {
-            document.write("ori No Right/Left");
-            document.getElementById("demoGamma").innerHTML = "ori No Right/Left";}
-
-        if(oriBeta > 10){
-            document.write("oriBack");
-            document.getElementById("demoBeta").innerHTML = "oriBack";}
-        else if(oriBeta < -10){
-            document.write("oriFront");
-            document.getElementById("demoBeta").innerHTML = "oriFront";}
-        else {
-            document.write("ori No Back/Front");
-            document.getElementById("demoBeta").innerHTML = "ori No Back/Front";}
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
