@@ -58,37 +58,37 @@
     if (window.DeviceOrientationEvent) {
       window.addEventListener('deviceorientation', function(eventData) {
         // left -> right tilt
-	oriGamma = eventData.gamma;
+        oriGamma = eventData.gamma;
         document.getElementById("spanTiltGamma").innerHTML = oriGamma;
         
         // back -> front tilt
-	oriBeta = eventData.beta;
+        oriBeta = eventData.beta;
         document.getElementById("spanTiltBeta").innerHTML = oriBeta;
         
         // compass direction
-	oriAlpha = eventData.alpha;
+        oriAlpha = eventData.alpha;
         document.getElementById("spanTiltDir").innerHTML = oriAlpha;
       }, false);
-	    	
-	if(oriGamma > 10){
-	    document.write("oriRight");
-	    document.getElementById("demoGamma").innerHTML = "oriRight";}
-	else if(oriGamma < -10){
-	    document.write("oriLeft");
-	    document.getElementById("demoGamma").innerHTML = "oriLeft";}
-	else {
-	    document.write("ori No Right/Left");
-	    document.getElementById("demoGamma").innerHTML = "ori No Right/Left";}
-	    
-	if(oriBeta > 10){
-	    document.write("oriBack");
-	    document.getElementById("demoBeta").innerHTML = "oriBack";}
-	else if(oriBeta < -10){
-	    document.write("oriFront");
-	    document.getElementById("demoBeta").innerHTML = "oriFront";}
-	else {
-	    document.write("ori No Back/Front");
-	    document.getElementById("demoBeta").innerHTML = "ori No Back/Front";}
+
+        if(oriGamma > 10){
+            document.write("oriRight");
+            document.getElementById("demoGamma").innerHTML = "oriRight";}
+        else if(oriGamma < -10){
+            document.write("oriLeft");
+            document.getElementById("demoGamma").innerHTML = "oriLeft";}
+        else {
+            document.write("ori No Right/Left");
+            document.getElementById("demoGamma").innerHTML = "ori No Right/Left";}
+
+        if(oriBeta > 10){
+            document.write("oriBack");
+            document.getElementById("demoBeta").innerHTML = "oriBack";}
+        else if(oriBeta < -10){
+            document.write("oriFront");
+            document.getElementById("demoBeta").innerHTML = "oriFront";}
+        else {
+            document.write("ori No Back/Front");
+            document.getElementById("demoBeta").innerHTML = "ori No Back/Front";}
     }
     else {
       message = 'Device Orientation is not supported for this Browser/OS version';
