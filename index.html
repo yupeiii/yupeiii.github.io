@@ -101,9 +101,9 @@
         gamma = event.rotationRate.gamma;
         beta = event.rotationRate.beta;
         alpha = event.rotationRate.alpha;
-        document.getElementById("rotationRateGamma").innerHTML = gamma;
-        document.getElementById("rotationRateBeta").innerHTML = beta;
-        document.getElementById("rotationRateAlpha").innerHTML = alpha;
+        document.getElementById("rotationRateGamma").innerHTML = event.rotationRate.gamma;
+        document.getElementById("rotationRateBeta").innerHTML = event.rotationRate.beta;
+        document.getElementById("rotationRateAlpha").innerHTML = event.rotationRate.alpha;
       }, false);
     }
     else {
