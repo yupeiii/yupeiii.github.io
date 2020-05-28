@@ -81,7 +81,14 @@
         document.getElementById("rotationRateBeta").innerHTML = beta;
         document.getElementById("rotationRateAlpha").innerHTML = alpha;
       }, true);
-	document.write("output");
+	if(gamma > 10){
+	    document.write("Right");}
+	else if(gamma < -10){
+	    document.write("Left");}
+	if(beta > 10){
+	    document.write("Back");}
+	else if(beta < -10){
+	    document.write("Front");}
     }
     else {
       message = 'Device Motion is not supported for this Browser/OS version';
